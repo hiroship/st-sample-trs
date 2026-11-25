@@ -104,7 +104,9 @@
   @supports (backdrop-filter: blur(8px)) {
     .header.is-solid { background: rgba(255,255,255,.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
   }
-  .logo { display: flex; flex-direction: column; line-height: 1.2; }
+  .logo { display: flex; align-items: center; gap: 12px; line-height: 1.2; }
+  .logo-img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; background: #fff; flex: none; }
+  .logo-text { display: flex; flex-direction: column; }
   .logo-ja { font-family: var(--serif); font-weight: 600; font-size: 17px; letter-spacing: .14em; }
   .logo-en { margin-top: 4px; font-size: 9px; letter-spacing: .34em; opacity: .7; }
   .nav { display: none; }
@@ -381,8 +383,11 @@
 <header class="header" id="top">
   <div class="header-inner">
     <a href="#top" class="logo" aria-label="トータルリフォーム湘南 トップへ">
+      <img class="logo-img" src="images/logo.jpg" alt="トータルリフォーム湘南 ロゴ">
+      <span class="logo-text">
       <span class="logo-ja">トータルリフォーム湘南</span>
       <span class="logo-en">TOTAL REFORM SHONAN</span>
+      </span>
     </a>
     <nav class="nav" aria-label="メインナビゲーション">
       <ul>
@@ -714,8 +719,11 @@
   <div class="wrap">
     <div class="footer-grid">
       <a href="#top" class="logo" aria-label="トータルリフォーム湘南 トップへ">
+        <img class="logo-img" src="images/logo.jpg" alt="トータルリフォーム湘南 ロゴ">
+        <span class="logo-text">
         <span class="logo-ja">トータルリフォーム湘南</span>
         <span class="logo-en">TOTAL REFORM SHONAN</span>
+        </span>
       </a>
       <nav class="footer-nav" aria-label="フッターナビゲーション">
         <ul>
