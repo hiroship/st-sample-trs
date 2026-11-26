@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>トータルリフォーム湘南｜原状回復も、リフォームも。窓口ひとつで。</title>
+<meta name="description" content="藤沢市を中心に一都三県で、戸建て・マンションのリフォーム／リノベーション、賃貸退去後の原状回復、外壁塗装、解体工事まで1社窓口で対応します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0E4A5A;
+    --navy-deep: #0A3642;
+    --navy-soft: #E7F0F2;
+    --amber: #D97706;
+    --amber-dark: #B45309;
+    --amber-soft: #FEF3E2;
+    --ink: #1F2A30;
+    --muted: #5B6B73;
+    --line: #DDE6E9;
+    --bg: #FFFFFF;
+    --bg-alt: #F6F9FA;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(14, 74, 90, .10);
+    --max: 1160px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", system-ui, -apple-system, "Hiragino Sans", sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.8;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+  .container { width: min(100% - 40px, var(--max)); margin-inline: auto; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 14px 28px; border-radius: 999px; font-weight: 700; text-decoration: none;
+    transition: background .2s, transform .2s, box-shadow .2s; line-height: 1.4;
+  }
+  .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .btn-primary { background: var(--amber); color: #fff; box-shadow: 0 6px 18px rgba(217, 119, 6, .30); }
+  .btn-primary:hover { background: var(--amber-dark); transform: translateY(-2px); }
+  .btn-outline { border: 2px solid var(--navy); color: var(--navy); background: #fff; }
+  .btn-outline:hover { background: var(--navy); color: #fff; }
+  .btn:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+  }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 20px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand img { width: 44px; height: 44px; border-radius: 8px; object-fit: contain; }
+  .brand-name { font-weight: 900; color: var(--navy); font-size: 18px; letter-spacing: .04em; line-height: 1.2; }
+  .brand-name small { display: block; font-size: 10px; font-weight: 500; color: var(--muted); letter-spacing: .12em; }
+  .gnav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; }
+  .gnav a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--ink); position: relative; padding: 4px 0; }
+  .gnav a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: var(--amber); transition: width .2s; }
+  .gnav a:hover::after { width: 100%; }
+  .header-cta { padding: 10px 20px; font-size: 14px; }
+  .nav-toggle { display: none; background: none; border: 0; width: 44px; height: 44px; cursor: pointer; padding: 10px; }
+  .nav-toggle span { display: block; height: 2px; background: var(--navy); margin: 6px 0; transition: transform .25s, opacity .25s; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 64px 0 80px; background: linear-gradient(180deg, #fff 0%, var(--bg-alt) 100%); overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--navy);
+    background: var(--navy-soft); padding: 6px 14px; border-radius: 999px; letter-spacing: .06em;
+  }
+  .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+  .hero h1 {
+    font-size: clamp(32px, 4.6vw, 54px); line-height: 1.35; font-weight: 900; color: var(--navy);
+    margin: 22px 0 20px; letter-spacing: .02em;
+  }
+  .hero h1 .accent { color: var(--amber); }
+  .hero-lead { color: var(--muted); font-size: 17px; margin: 0 0 30px; max-width: 34em; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 30px 0 0; padding: 0; list-style: none; }
+  .hero-tags li { font-size: 13px; color: var(--navy); border: 1px solid var(--line); background: #fff; padding: 4px 12px; border-radius: 6px; }
+  .hero-visual { position: relative; }
+  .hero-visual::before {
+    content: ""; position: absolute; inset: 24px -24px -24px 24px; background: var(--navy); border-radius: 20px; z-index: 0;
+  }
+  .hero-visual figure { position: relative; z-index: 1; margin: 0; }
+  .hero-visual img { border-radius: 20px; aspect-ratio: 4 / 3.2; object-fit: cover; width: 100%; box-shadow: var(--shadow); }
+  .hero-badge {
+    position: absolute; left: -22px; bottom: 28px; z-index: 2; background: #fff; border-radius: 12px; box-shadow: var(--shadow);
+    padding: 14px 18px; display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 700; color: var(--navy);
+  }
+  .hero-badge .icon { width: 40px; height: 40px; border-radius: 10px; background: var(--amber-soft); color: var(--amber); display: grid; place-items: center; }
+  .hero-badge .icon svg { width: 22px; height: 22px; }
+  .photo-note { font-size: 11px; color: var(--muted); margin-top: 8px; text-align: right; }
+  .hero .photo-note { margin-top: 34px; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 96px 0; }
+  .section-alt { background: var(--bg-alt); }
+  .section-head { text-align: center; margin-bottom: 52px; }
+  .section-head .en { display: block; font-size: 13px; font-weight: 700; letter-spacing: .24em; color: var(--amber); text-transform: uppercase; margin-bottom: 8px; }
+  .section-head h2 { font-size: clamp(24px, 3vw, 34px); color: var(--navy); margin: 0; font-weight: 900; line-height: 1.5; }
+  .section-head p { color: var(--muted); margin: 14px auto 0; max-width: 40em; }
+
+  /* ---------- Worries ---------- */
+  .worries-box {
+    background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 44px; box-shadow: var(--shadow);
+    max-width: 920px; margin-inline: auto;
+  }
+  .checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; list-style: none; margin: 0; padding: 0; }
+  .checklist li { display: flex; gap: 12px; align-items: flex-start; font-weight: 500; padding: 12px 0; border-bottom: 1px dashed var(--line); }
+  .checklist .check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 6px; background: var(--amber); color: #fff; display: grid; place-items: center; margin-top: 1px; }
+  .checklist .check svg { width: 16px; height: 16px; }
+  .worries-answer { margin-top: 36px; text-align: center; }
+  .worries-answer p { display: inline-block; font-size: clamp(18px, 2.2vw, 22px); font-weight: 900; color: var(--navy); margin: 0; position: relative; padding: 0 8px; }
+  .worries-answer p::after { content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 10px; background: var(--amber-soft); z-index: -1; }
+  .worries-answer .arrow { display: block; width: 0; height: 0; margin: 0 auto 18px; border-left: 22px solid transparent; border-right: 22px solid transparent; border-top: 18px solid var(--navy); }
+
+  /* ---------- Strengths ---------- */
+  .strengths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .strength {
+    background: #fff; border-radius: var(--radius); padding: 40px 30px 34px; border: 1px solid var(--line);
+    position: relative; transition: transform .25s, box-shadow .25s;
+  }
+  .strength:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .strength .num { font-size: 52px; font-weight: 900; line-height: 1; color: var(--navy-soft); position: absolute; top: 20px; right: 24px; letter-spacing: -.02em; }
+  .strength .num span { color: var(--amber); font-size: 14px; letter-spacing: .1em; display: block; text-align: right; margin-bottom: 4px; }
+  .strength .icon { width: 58px; height: 58px; border-radius: 14px; background: var(--navy); color: #fff; display: grid; place-items: center; margin-bottom: 22px; }
+  .strength .icon svg { width: 30px; height: 30px; }
+  .strength h3 { font-size: 20px; color: var(--navy); margin: 0 0 12px; line-height: 1.5; }
+  .strength p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* ---------- Services ---------- */
+  .services { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+  .service { grid-column: span 2; background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s; }
+  .service:nth-child(4), .service:nth-child(5) { grid-column: span 3; }
+  .service:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .service .thumb { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
+  .service .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+  .service:hover .thumb img { transform: scale(1.05); }
+  .service .label { position: absolute; top: 14px; left: 14px; background: var(--amber); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
+  .service .body { padding: 22px 24px 26px; }
+  .service h3 { margin: 0 0 8px; font-size: 19px; color: var(--navy); }
+  .service p { margin: 0; font-size: 14.5px; color: var(--muted); }
+  .services-note { font-size: 12px; color: var(--muted); text-align: right; margin-top: 14px; }
+
+  /* ---------- Works ---------- */
+  .works { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .work { background: #fff; border-radius: var(--radius); border: 1px solid var(--line); overflow: hidden; display: flex; flex-direction: column; }
+  .work-head { background: var(--navy); color: #fff; padding: 26px 26px 22px; position: relative; }
+  .work-head .case { font-size: 12px; font-weight: 700; letter-spacing: .2em; color: #FCD9A8; }
+  .work-head h3 { margin: 6px 0 0; font-size: 19px; line-height: 1.55; }
+  .work-head .icon { position: absolute; right: 22px; top: 22px; width: 42px; height: 42px; border-radius: 10px; background: rgba(255,255,255,.12); display: grid; place-items: center; }
+  .work-head .icon svg { width: 22px; height: 22px; }
+  .work-body { padding: 22px 26px 26px; flex: 1; }
+  .work-meta { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .work-meta li { display: grid; grid-template-columns: 5.5em 1fr; gap: 10px; font-size: 14.5px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+  .work-meta li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .work-meta dt, .work-meta .k { font-weight: 700; color: var(--navy); }
+  .work-meta .v { color: var(--ink); }
+  .work-tag { display: inline-block; margin-top: 16px; font-size: 12px; font-weight: 700; color: var(--amber-dark); background: var(--amber-soft); padding: 4px 12px; border-radius: 999px; }
+  .works-more { text-align: center; margin-top: 40px; }
+  .works-more p { color: var(--muted); margin: 0 0 16px; font-size: 15px; }
+
+  /* ---------- Flow ---------- */
+  .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  .flow li { position: relative; text-align: center; padding: 0 14px; }
+  .flow li::after {
+    content: ""; position: absolute; top: 36px; left: calc(50% + 44px); right: calc(-50% + 44px); height: 2px;
+    background: repeating-linear-gradient(90deg, var(--navy) 0 6px, transparent 6px 12px);
+  }
+  .flow li:last-child::after { display: none; }
+  .flow .circle { width: 72px; height: 72px; border-radius: 50%; background: #fff; border: 2px solid var(--navy); color: var(--navy); display: grid; place-items: center; margin: 0 auto 18px; position: relative; }
+  .flow .circle svg { width: 30px; height: 30px; }
+  .flow .circle::before { counter-increment: step; content: counter(step, decimal-leading-zero); position: absolute; top: -8px; right: -10px; background: var(--amber); color: #fff; font-size: 11px; font-weight: 700; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; }
+  .flow h3 { margin: 0 0 8px; font-size: 16px; color: var(--navy); }
+  .flow p { margin: 0; font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+
+  /* ---------- FAQ ---------- */
+  .faq { max-width: 860px; margin-inline: auto; display: grid; gap: 14px; }
+  .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .faq details[open] { border-color: var(--navy); box-shadow: var(--shadow); }
+  .faq summary { list-style: none; cursor: pointer; padding: 20px 56px 20px 24px; font-weight: 700; color: var(--navy); position: relative; display: flex; gap: 14px; align-items: flex-start; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: ""; position: absolute; right: 24px; top: 50%; width: 10px; height: 10px; border-right: 2px solid var(--amber); border-bottom: 2px solid var(--amber); transform: translateY(-70%) rotate(45deg); transition: transform .2s; }
+  .faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+  .faq .q, .faq .a { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 900; }
+  .faq .q { background: var(--navy); color: #fff; }
+  .faq .a { background: var(--amber-soft); color: var(--amber-dark); }
+  .faq .answer { padding: 0 24px 22px; display: flex; gap: 14px; align-items: flex-start; color: var(--ink); }
+  .faq .answer p { margin: 0; font-size: 15px; }
+
+  /* ---------- Company ---------- */
+  .company { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: start; }
+  .company-intro h3 { font-size: 24px; color: var(--navy); margin: 0 0 16px; line-height: 1.6; }
+  .company-intro p { color: var(--muted); margin: 0 0 14px; }
+  .company-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+  .company-table th, .company-table td { text-align: left; padding: 18px 22px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 15px; }
+  .company-table tr:last-child th, .company-table tr:last-child td { border-bottom: 0; }
+  .company-table th { width: 30%; background: var(--navy-soft); color: var(--navy); font-weight: 700; white-space: nowrap; }
+  .company-table a { color: var(--navy); font-weight: 700; }
+
+  /* ---------- Contact ---------- */
+  .contact { background: var(--navy); color: #fff; position: relative; overflow: hidden; }
+  .contact::before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: rgba(255,255,255,.05); right: -160px; top: -200px; }
+  .contact::after { content: ""; position: absolute; width: 360px; height: 360px; border-radius: 50%; background: rgba(217,119,6,.12); left: -140px; bottom: -180px; }
+  .contact .container { position: relative; z-index: 1; }
+  .contact .section-head h2 { color: #fff; }
+  .contact .section-head p { color: rgba(255,255,255,.82); }
+  .contact-card { max-width: 760px; margin-inline: auto; background: #fff; color: var(--ink); border-radius: 20px; padding: 44px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,.2); }
+  .contact-card .ig-icon { width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 18px; display: grid; place-items: center; color: #fff; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+  .contact-card .ig-icon svg { width: 34px; height: 34px; }
+  .contact-card h3 { margin: 0 0 6px; color: var(--navy); font-size: 22px; }
+  .contact-card .handle { color: var(--muted); margin: 0 0 22px; font-weight: 500; }
+  .contact-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; list-style: none; padding: 0; margin: 0 0 30px; text-align: left; }
+  .contact-steps li { background: var(--bg-alt); border-radius: 10px; padding: 14px 16px; font-size: 14px; display: flex; gap: 10px; align-items: flex-start; }
+  .contact-steps b { color: var(--amber); font-size: 18px; line-height: 1.2; }
+  .contact-hours { margin: 22px 0 0; font-size: 14px; color: var(--muted); }
+  .contact-hours strong { color: var(--navy); }
+
+  /* ---------- Footer ---------- */
+  .site-footer { background: var(--navy-deep); color: rgba(255,255,255,.8); padding: 56px 0 28px; font-size: 14px; }
+  .footer-grid { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .footer-brand { display: flex; gap: 14px; align-items: center; text-decoration: none; }
+  .footer-brand img { width: 52px; height: 52px; border-radius: 10px; background: #fff; object-fit: contain; }
+  .footer-brand span { color: #fff; font-weight: 900; font-size: 18px; letter-spacing: .04em; }
+  .footer-info p { margin: 14px 0 0; line-height: 1.9; }
+  .footer-nav ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, auto); gap: 8px 36px; }
+  .footer-nav a { text-decoration: none; }
+  .footer-nav a:hover { color: #fff; text-decoration: underline; }
+  .footer-ig { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; color: #fff; text-decoration: none; font-weight: 700; }
+  .footer-ig svg { width: 20px; height: 20px; }
+  .copyright { border-top: 1px solid rgba(255,255,255,.14); margin-top: 40px; padding-top: 22px; text-align: center; font-size: 12px; color: rgba(255,255,255,.6); }
+
+  /* ---------- Floating CTA (mobile) ---------- */
+  .float-cta { display: none; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1024px) {
+    .gnav ul { gap: 18px; }
+    .services { grid-template-columns: repeat(2, 1fr); }
+    .service, .service:nth-child(4), .service:nth-child(5) { grid-column: span 1; }
+    .service:nth-child(5) { grid-column: span 2; }
+    .service:nth-child(5) .thumb { aspect-ratio: 21 / 9; }
+    .flow { grid-template-columns: repeat(3, 1fr); row-gap: 40px; }
+    .flow li:nth-child(3)::after { display: none; }
+  }
+  @media (max-width: 900px) {
+    .nav-toggle { display: block; }
+    .header-cta { display: none; }
+    .gnav {
+      position: fixed; top: 72px; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--line);
+      box-shadow: 0 12px 24px rgba(0,0,0,.08); transform: translateY(-8px); opacity: 0; visibility: hidden; transition: .25s;
+    }
+    .gnav.is-open { transform: none; opacity: 1; visibility: visible; }
+    .gnav ul { flex-direction: column; gap: 0; padding: 8px 20px 20px; }
+    .gnav li a { display: block; padding: 14px 4px; border-bottom: 1px solid var(--line); font-size: 15px; }
+    .gnav li a::after { display: none; }
+    .hero { padding: 40px 0 64px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-visual { margin-right: 24px; }
+    .hero-badge { left: 12px; }
+    .strengths, .works { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
+    .company { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 15px; }
+    section { padding: 68px 0; }
+    .section-head { margin-bottom: 36px; }
+    .brand-name { font-size: 16px; }
+    .hero-actions .btn { width: 100%; }
+    .worries-box { padding: 26px 20px; }
+    .checklist { grid-template-columns: 1fr; gap: 0; }
+    .services { grid-template-columns: 1fr; }
+    .service, .service:nth-child(5) { grid-column: span 1; }
+    .service:nth-child(5) .thumb { aspect-ratio: 16 / 10; }
+    .flow { grid-template-columns: 1fr; row-gap: 0; }
+    .flow li { display: grid; grid-template-columns: 72px 1fr; gap: 0 18px; text-align: left; padding: 0 0 28px; }
+    .flow li::after { display: block !important; top: 80px; bottom: 6px; left: 35px; right: auto; width: 2px; height: auto; background: repeating-linear-gradient(180deg, var(--navy) 0 6px, transparent 6px 12px); }
+    .flow li:last-child::after { display: none !important; }
+    .flow .circle { margin: 0; grid-row: span 2; }
+    .flow h3 { margin-top: 10px; }
+    .company-table th, .company-table td { display: block; width: 100%; }
+    .company-table th { padding-bottom: 8px; border-bottom: 0; }
+    .company-table td { padding-top: 8px; }
+    .contact-card { padding: 32px 20px; }
+    .contact-steps { grid-template-columns: 1fr; }
+    .footer-nav ul { grid-template-columns: repeat(2, 1fr); }
+    .float-cta {
+      display: flex; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40; justify-content: center;
+      box-shadow: 0 10px 24px rgba(0,0,0,.2);
+    }
+    .site-footer { padding-bottom: 96px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 8a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2zm6.2-8.2a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-window" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.2"/><path d="M5.5 20c.6-3.7 3.2-6 6.5-6s5.9 2.3 6.5 6"/><path d="M3 11h3M18 11h3"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></g></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6.5v13.5L9 17.5l6 2.5 6-2.5V4l-6 2.5L9 4z"/><path d="M9 4v13.5M15 6.5V20"/></g></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10z"/><path d="M8 9h8M8 12.5h5"/></g></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></g></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8l-5-5z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/></g></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3.5 17.2a1.8 1.8 0 0 0 2.5 2.5l5.8-5.8a4 4 0 0 0 5.1-5.4l-2.5 2.5-2.2-.6-.6-2.2 2.5-2.5z"/></g></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-5h4v5"/></g></symbol>
+  <symbol id="i-toilet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h5v7H7z"/><path d="M4 10h16a8 8 0 0 1-8 8 8 8 0 0 1-8-8z"/><path d="M9 18l-1 3h8l-1-3"/></g></symbol>
+  <symbol id="i-brush" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="14" height="6" rx="1.5"/><path d="M18 6h2v5h-8v3"/><rect x="10.5" y="14" width="3" height="7" rx="1"/></g></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M4 9.3h16M4 14.6h16M9.3 4v16M14.6 4v16"/></g></symbol>
+</svg>
+
+<!-- ============ Header ============ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="トータルリフォーム湘南 トップへ">
+      <img src="images/logo.jpg" alt="トータルリフォーム湘南のロゴ" width="44" height="44">
+      <span class="brand-name">トータルリフォーム湘南<small>TOTAL REFORM SHONAN</small></span>
+    </a>
+    <nav class="gnav" id="gnav" aria-label="メインメニュー">
+      <ul>
+        <li><a href="#strengths">強み</a></li>
+        <li><a href="#services">サービス</a></li>
+        <li><a href="#works">施工事例</a></li>
+        <li><a href="#flow">施工の流れ</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#company">会社概要</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary header-cta" href="https://www.instagram.com/total_reform_shonan/" target="_blank" rel="noopener">
+      <svg aria-hidden="true"><use href="#i-ig"/></svg>DMで相談する
+    </a>
+    <button class="nav-toggle" type="button" aria-controls="gnav" aria-expanded="false">
+      <span></span><span></span><span></span><span class="sr-only">メニューを開く</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ Hero ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow">藤沢市を中心に 一都三県で施工</span>
+        <h1 id="hero-title">原状回復も、<br>リフォームも。<br><span class="accent">窓口ひとつで。</span></h1>
+        <p class="hero-lead">戸建て・マンションのリフォーム／リノベーションから、賃貸退去後の原状回復、外壁塗装、解体工事まで。複数の業者を手配しなくても、トータルリフォーム湘南が1社でまとめて対応します。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagram DMで相談する</a>
+          <a class="btn btn-outline" href="#services">サービスを見る</a>
+        </div>
+        <ul class="hero-tags" aria-label="対応工事">
+          <li>住宅リフォーム</li><li>原状回復</li><li>再販リフォーム</li><li>外壁塗装</li><li>解体工事</li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <figure>
+          <img src="images/v4-hero.jpg" alt="リフォーム工事中のマンションの一室" width="1920" height="1080" fetchpriority="high">
+          <div class="hero-badge">
+            <span class="icon"><svg aria-hidden="true"><use href="#i-window"/></svg></span>
+            <span>ご相談窓口は1社だけ</span>
+          </div>
+        </figure>
+        <p class="photo-note">※写真はイメージです</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Worries ============ -->
+  <section class="section-alt" id="worries" aria-labelledby="worries-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="en">Check</span>
+        <h2 id="worries-title">こんなお悩み、ありませんか？</h2>
+      </div>
+      <div class="worries-box">
+        <ul class="checklist">
+          <li><span class="check"><svg aria-hidden="true"><use href="#i-check"/></svg></span>退去後の原状回復、工事ごとに業者を探すのが手間</li>
+          <li><span class="check"><svg aria-hidden="true"><use href="#i-check"/></svg></span>現地調査の立ち会いが、業者の数だけ発生してしまう</li>
+          <li><span class="check"><svg aria-hidden="true"><use href="#i-check"/></svg></span>内装と外壁塗装、別々に頼むのは負担が大きい</li>
+          <li><span class="check"><svg aria-hidden="true"><use href="#i-check"/></svg></span>再販前の物件を、清潔感のある状態に整えたい</li>
+          <li><span class="check"><svg aria-hidden="true"><use href="#i-check"/></svg></span>解体からリフォームまで、まとめて相談したい</li>
+          <li><span class="check"><svg aria-hidden="true"><use href="#i-check"/></svg></span>神奈川以外のエリアの物件も相談できる会社を探している</li>
+        </ul>
+        <div class="worries-answer">
+          <span class="arrow" aria-hidden="true"></span>
+          <p>その工事、トータルリフォーム湘南の窓口ひとつで。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Strengths ============ -->
+  <section id="strengths" aria-labelledby="strengths-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="en">Strengths</span>
+        <h2 id="strengths-title">トータルリフォーム湘南が選ばれる理由</h2>
+        <p>不動産会社さま・管理会社さま、そしてリフォームをお考えの方の「手間」を減らすことを大切にしています。</p>
+      </div>
+      <div class="strengths">
+        <article class="strength">
+          <div class="num" aria-hidden="true"><span>POINT</span>01</div>
+          <div class="icon"><svg aria-hidden="true"><use href="#i-window"/></svg></div>
+          <h3>1社窓口で、<br>工事をまとめて対応</h3>
+          <p>内装リフォーム、原状回復、外壁塗装、解体工事まで1社で対応可能。工事ごとに複数の業者を手配する必要はありません。</p>
+        </article>
+        <article class="strength">
+          <div class="num" aria-hidden="true"><span>POINT</span>02</div>
+          <div class="icon"><svg aria-hidden="true"><use href="#i-search"/></svg></div>
+          <h3>現地調査は1回で。<br>ご負担を大きく軽減</h3>
+          <p>窓口がひとつなので、現地調査は1回で済みます。立ち会いや日程調整の手間が減り、ご担当者さまの負担が大きく軽減されます。</p>
+        </article>
+        <article class="strength">
+          <div class="num" aria-hidden="true"><span>POINT</span>03</div>
+          <div class="icon"><svg aria-hidden="true"><use href="#i-map"/></svg></div>
+          <h3>藤沢市を中心に、<br>一都三県で施工</h3>
+          <p>藤沢市を中心に、神奈川県・東京都など一都三県で施工しています。埼玉県・千葉県での施工例もございます。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Services ============ -->
+  <section class="section-alt" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="en">Services</span>
+        <h2 id="services-title">サービス</h2>
+        <p>清潔感があり、オシャレな空間づくりを。住まいから賃貸・再販物件まで幅広く対応します。</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <div class="thumb">
+            <img src="images/v4-living-warm.jpg" alt="木の壁が印象的な落ち着いたリビング" loading="lazy" width="1200" height="900">
+            <span class="label">Reform</span>
+          </div>
+          <div class="body">
+            <h3>住宅リフォーム</h3>
+            <p>戸建て・マンションのリフォーム／リノベーション。水まわりや内装など、暮らしに合わせた空間づくりをお手伝いします。</p>
+          </div>
+        </article>
+        <article class="service">
+          <div class="thumb">
+            <img src="images/v4-living.jpg" alt="明るい光が入るリビングダイニング" loading="lazy" width="1200" height="900">
+            <span class="label">Restoration</span>
+          </div>
+          <div class="body">
+            <h3>原状回復</h3>
+            <p>賃貸物件の退去後の原状回復工事。不動産会社さま・管理会社さまからのご相談に対応します。</p>
+          </div>
+        </article>
+        <article class="service">
+          <div class="thumb">
+            <img src="images/v4-staged.jpg" alt="家具が配置されたステージング済みのリビング" loading="lazy" width="1200" height="900">
+            <span class="label">Resale</span>
+          </div>
+          <div class="body">
+            <h3>再販リフォーム</h3>
+            <p>再販に向けた物件のリフォーム。清潔感があり、オシャレな印象の空間に整えます。</p>
+          </div>
+        </article>
+        <article class="service">
+          <div class="thumb">
+            <img src="images/v4-exterior.jpg" alt="青空の下の戸建て住宅の外観" loading="lazy" width="1200" height="800">
+            <span class="label">Exterior</span>
+          </div>
+          <div class="body">
+            <h3>外壁塗装</h3>
+            <p>内装工事とあわせて外壁塗装のご相談も可能です。建物まわりの工事もまとめてお任せください。</p>
+          </div>
+        </article>
+        <article class="service">
+          <div class="thumb">
+            <img src="images/v4-demolition.jpg" alt="重機による解体工事の現場" loading="lazy" width="1200" height="900">
+            <span class="label">Demolition</span>
+          </div>
+          <div class="body">
+            <h3>解体工事</h3>
+            <p>解体工事も取り扱っています。解体からリフォームまで、ひとつの窓口でご相談いただけます。</p>
+          </div>
+        </article>
+      </div>
+      <p class="services-note">※写真はイメージです</p>
+    </div>
+  </section>
+
+  <!-- ============ Works ============ -->
+  <section id="works" aria-labelledby="works-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="en">Works</span>
+        <h2 id="works-title">施工事例</h2>
+        <p>一都三県で手がけた工事の一例をご紹介します。</p>
+      </div>
+      <div class="works">
+        <article class="work">
+          <div class="work-head">
+            <span class="case">CASE 01</span>
+            <h3>和式トイレから<br>洋式トイレへの変更工事</h3>
+            <span class="icon"><svg aria-hidden="true"><use href="#i-toilet"/></svg></span>
+          </div>
+          <div class="work-body">
+            <ul class="work-meta">
+              <li><span class="k">エリア</span><span class="v">埼玉県狭山市</span></li>
+              <li><span class="k">工事内容</span><span class="v">和式トイレ→洋式トイレへの変更</span></li>
+              <li><span class="k">床仕上げ</span><span class="v">クッションフロア施工</span></li>
+            </ul>
+            <span class="work-tag">トイレリフォーム</span>
+          </div>
+        </article>
+        <article class="work">
+          <div class="work-head">
+            <span class="case">CASE 02</span>
+            <h3>店舗トイレ内の<br>クロス張り替え工事</h3>
+            <span class="icon"><svg aria-hidden="true"><use href="#i-brush"/></svg></span>
+          </div>
+          <div class="work-body">
+            <ul class="work-meta">
+              <li><span class="k">エリア</span><span class="v">千葉県</span></li>
+              <li><span class="k">物件</span><span class="v">店舗</span></li>
+              <li><span class="k">工事内容</span><span class="v">トイレ内のクロス張り替え</span></li>
+            </ul>
+            <span class="work-tag">内装工事</span>
+          </div>
+        </article>
+        <article class="work">
+          <div class="work-head">
+            <span class="case">CASE 03</span>
+            <h3>コンクリート蓋から<br>鉄蓋への変更工事</h3>
+            <span class="icon"><svg aria-hidden="true"><use href="#i-grid"/></svg></span>
+          </div>
+          <div class="work-body">
+            <ul class="work-meta">
+              <li><span class="k">エリア</span><span class="v">東京都</span></li>
+              <li><span class="k">物件</span><span class="v">店舗</span></li>
+              <li><span class="k">工事内容</span><span class="v">コンクリート蓋→鉄蓋への変更</span></li>
+            </ul>
+            <span class="work-tag">設備・外構工事</span>
+          </div>
+        </article>
+      </div>
+      <div class="works-more">
+        <p>施工の様子は Instagram でも発信しています。</p>
+        <a class="btn btn-outline" href="https://www.instagram.com/total_reform_shonan/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagramを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Flow ============ -->
+  <section class="section-alt" id="flow" aria-labelledby="flow-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="en">Flow</span>
+        <h2 id="flow-title">施工の流れ</h2>
+        <p>ご相談から完了まで、窓口はずっとひとつ。やり取りの相手が変わらないので安心です。</p>
+      </div>
+      <ol class="flow">
+        <li>
+          <div class="circle"><svg aria-hidden="true"><use href="#i-chat"/></svg></div>
+          <h3>お問い合わせ</h3>
+          <p>Instagram の DM から、物件の状況やご要望をお送りください。</p>
+        </li>
+        <li>
+          <div class="circle"><svg aria-hidden="true"><use href="#i-search"/></svg></div>
+          <h3>現地調査</h3>
+          <p>複数の工事があっても、現地調査は1回で済みます。</p>
+        </li>
+        <li>
+          <div class="circle"><svg aria-hidden="true"><use href="#i-doc"/></svg></div>
+          <h3>ご提案・お見積り</h3>
+          <p>調査内容をもとに、工事内容をご提案します。</p>
+        </li>
+        <li>
+          <div class="circle"><svg aria-hidden="true"><use href="#i-tool"/></svg></div>
+          <h3>施工</h3>
+          <p>内装・外壁・解体など、必要な工事をまとめて進めます。</p>
+        </li>
+        <li>
+          <div class="circle"><svg aria-hidden="true"><use href="#i-key"/></svg></div>
+          <h3>完了・お引き渡し</h3>
+          <p>仕上がりをご確認いただき、お引き渡しとなります。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="en">FAQ</span>
+        <h2 id="faq-title">よくある質問</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary><span class="q">Q</span>対応エリアはどこですか？</summary>
+          <div class="answer"><span class="a">A</span><p>一都三県に対応しています。藤沢市を中心に、神奈川県・東京都などで施工しています。</p></div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>不動産会社・管理会社からの依頼にも対応していますか？</summary>
+          <div class="answer"><span class="a">A</span><p>はい。賃貸退去後の原状回復や再販に向けたリフォームなど、不動産会社さま・管理会社さまからのご相談に対応しています。</p></div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>内装と外壁塗装、解体工事をまとめて頼めますか？</summary>
+          <div class="answer"><span class="a">A</span><p>はい。リフォーム／リノベーション、原状回復に加えて、外壁塗装や解体工事も取り扱っています。1社窓口で対応できるため、複数の業者を手配する必要はありません。</p></div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>現地調査は何回必要ですか？</summary>
+          <div class="answer"><span class="a">A</span><p>窓口がひとつなので、複数の工事があっても現地調査は1回で済みます。</p></div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>問い合わせ方法と営業時間を教えてください。</summary>
+          <div class="answer"><span class="a">A</span><p>お問い合わせは Instagram の DM で受け付けています。営業時間は 9:00〜19:00、定休日は日曜日です。</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Company ============ -->
+  <section class="section-alt" id="company" aria-labelledby="company-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="en">Company</span>
+        <h2 id="company-title">会社概要</h2>
+      </div>
+      <div class="company">
+        <div class="company-intro">
+          <h3>住まいと物件の工事を、<br>ひとつの窓口で。</h3>
+          <p>トータルリフォーム湘南は、藤沢市を中心に一都三県でリフォーム／リノベーション、原状回復、外壁塗装、解体工事を手がけています。</p>
+          <p>清潔感があり、オシャレな空間づくりを大切に。不動産会社さま・管理会社さま、リフォームをお考えの方の負担を減らす工事対応を目指しています。</p>
+        </div>
+        <table class="company-table">
+          <tbody>
+            <tr><th scope="row">屋号</th><td>トータルリフォーム湘南</td></tr>
+            <tr><th scope="row">事業内容</th><td>戸建て・マンション等のリフォーム／リノベーション<br>賃貸退去後の原状回復<br>外壁塗装<br>解体工事</td></tr>
+            <tr><th scope="row">対応エリア</th><td>一都三県（藤沢市を中心に神奈川県・東京都等で施工）</td></tr>
+            <tr><th scope="row">営業時間</th><td>9:00〜19:00</td></tr>
+            <tr><th scope="row">定休日</th><td>日曜日</td></tr>
+            <tr><th scope="row">お問い合わせ</th><td><a href="https://www.instagram.com/total_reform_shonan/" target="_blank" rel="noopener">Instagram（@total_reform_shonan）</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Contact ============ -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="en">Contact</span>
+        <h2 id="contact-title">お問い合わせ</h2>
+        <p>ご相談は Instagram の DM から受け付けています。工事の内容が決まっていなくても、まずはお気軽にメッセージください。</p>
+      </div>
+      <div class="contact-card">
+        <div class="ig-icon"><svg aria-hidden="true"><use href="#i-ig"/></svg></div>
+        <h3>Instagram DMでご相談ください</h3>
+        <p class="handle">@total_reform_shonan</p>
+        <ol class="contact-steps">
+          <li><b>1</b><span>下のボタンから Instagram を開く</span></li>
+          <li><b>2</b><span>「メッセージ」をタップ</span></li>
+          <li><b>3</b><span>物件の場所・ご相談内容を送信</span></li>
+        </ol>
+        <a class="btn btn-primary" href="https://www.instagram.com/total_reform_shonan/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagramで相談する</a>
+        <p class="contact-hours">営業時間 <strong>9:00〜19:00</strong> ／ 定休日 <strong>日曜</strong></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <a href="#top" class="footer-brand">
+          <img src="images/logo.jpg" alt="トータルリフォーム湘南のロゴ" loading="lazy" width="52" height="52">
+          <span>トータルリフォーム湘南</span>
+        </a>
+        <p>リフォーム／リノベーション・原状回復・外壁塗装・解体工事<br>対応エリア：一都三県（藤沢市を中心に神奈川県・東京都等）<br>営業時間 9:00〜19:00 ／ 定休日 日曜</p>
+        <a class="footer-ig" href="https://www.instagram.com/total_reform_shonan/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>@total_reform_shonan</a>
+      </div>
+      <nav class="footer-nav" aria-label="フッターメニュー">
+        <ul>
+          <li><a href="#strengths">強み</a></li>
+          <li><a href="#services">サービス</a></li>
+          <li><a href="#works">施工事例</a></li>
+          <li><a href="#flow">施工の流れ</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+          <li><a href="#company">会社概要</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="copyright">&copy; トータルリフォーム湘南</p>
+  </div>
+</footer>
+
+<a class="btn btn-primary float-cta" href="https://www.instagram.com/total_reform_shonan/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagram DMで相談する</a>
+
+<script>
+  (function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('gnav');
+    function close() { nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  })();
+</script>
+</body>
+</html>
