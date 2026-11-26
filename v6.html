@@ -402,6 +402,48 @@ ul,ol{margin:0;padding:0;list-style:none}
   .reveal{opacity:1;transform:none}
   .hero-photo img{animation:none}
 }
+
+/* ---------- TOP：アーチ型の写真3枚＋回るバッジ ---------- */
+.hero-bg{display:none}
+.tiles{position:absolute;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tiles .t{border-radius:999px 999px 18px 18px;overflow:hidden;box-shadow:0 18px 40px rgba(20,40,63,.12);background:#eee}
+.tiles img{width:100%;height:100%;object-fit:cover;animation:heroIn 1.4s ease-out both}
+.tiles .t2 img{animation-delay:.15s}.tiles .t3 img{animation-delay:.3s}
+.tiles .t1 img{object-position:55% 50%}
+.tiles-back{position:absolute;z-index:0;background:var(--main-soft);border-radius:999px 0 0 0}
+.badge{position:absolute;z-index:3;width:132px;height:132px;border-radius:50%;background:#fff;box-shadow:0 12px 30px rgba(20,40,63,.14);display:grid;place-items:center}
+.badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.badge span{font-size:22px;font-weight:700;color:var(--main);line-height:1.1;text-align:center}
+.badge small{display:block;font-size:10px;color:var(--accent);letter-spacing:.1em;margin-top:2px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (min-width:900px){
+  .hero{background:#fff}
+  .tiles{top:calc(var(--header-h) + 34px);bottom:128px;right:max(40px,calc((100% - 1240px)/2));width:min(44%,600px)}
+  .tiles .t1{margin:44px 0 -20px}
+  .tiles .t2{margin:0 0 24px}
+  .tiles .t3{margin:76px 0 -52px}
+  .tiles-back{right:0;bottom:0;width:calc(max(40px,(100% - 1240px)/2) + min(44%,600px) + 40px);height:62%;border-radius:420px 0 0 0}
+  .badge{right:calc(max(40px,(100% - 1240px)/2) - 34px);top:calc(var(--header-h) + 64px)}
+  .hero-text{max-width:640px}
+  .hero h1{font-size:44px}
+}
+@media (min-width:900px) and (max-width:1279px){.tiles{width:40%;gap:12px}.hero-text{max-width:calc(56% - 30px)}.hero h1{font-size:32px}.hero-actions{grid-template-columns:1fr}.badge{right:16px;width:112px;height:112px}.badge span{font-size:18px}}
+@media (max-width:899px){
+  .hero{background:#fff}
+  .tiles{top:calc(var(--header-h) + 14px);left:12px;right:12px;height:50svh;gap:8px}
+  .tiles .t{border-radius:999px 999px 12px 12px}
+  .tiles .t1{margin:10px 0 24px}
+  .tiles .t2{margin:0 0 34px}
+  .tiles .t3{margin:26px 0 8px}
+  .tiles-back{left:0;right:0;top:calc(var(--header-h) + 30svh);height:30svh;border-radius:0}
+  .badge{width:92px;height:92px;right:14px;top:calc(var(--header-h) + 42svh)}
+  .badge span{font-size:15px}
+  .badge small{font-size:8px}
+  .hero-text{background:rgba(255,255,255,.9)}
+  .hero-note{color:var(--muted);text-shadow:none;top:auto;bottom:6px}
+}
+@media (prefers-reduced-motion:reduce){.badge svg{animation:none}.tiles img{animation:none}}
+
 </style>
 </head>
 <body class="no-js">
@@ -457,7 +499,13 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 <!-- ===== Hero ===== -->
 <section class="hero" id="top" aria-labelledby="hero-title">
-  <div class="hero-bg"><img src="images/v6-hero.jpg" alt="白い壁と明るい木の床の、何も置いていない清潔な部屋" width="2000" height="1333" fetchpriority="high"></div>
+  <div class="tiles-back" aria-hidden="true"></div>
+  <div class="tiles">
+    <div class="t t1"><img src="images/v6-hero.jpg" alt="白い壁と明るい木の床の、何も置いていない清潔な部屋" width="2000" height="1333" fetchpriority="high"></div>
+    <div class="t t2"><img src="images/v6-renovation.jpg" alt="白いソファと観葉植物のある明るいリビング" width="1200" height="900"></div>
+    <div class="t t3"><img src="images/v6-toilet.jpg" alt="白いタイルと木の鏡のある、明るく清潔なトイレ" width="900" height="1200"></div>
+  </div>
+  <div class="badge" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="bc" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text font-size="10" fill="#1F3A5F" font-family="Montserrat,sans-serif" font-weight="700"><textPath href="#bc" textLength="286" lengthAdjust="spacing">ONE STOP REFORM ・ SHONAN ・ </textPath></text></svg><span>1社<small>で完結</small></span></div>
   <div class="hero-grid">
     <div class="hero-text">
       <p class="hero-label">一都三県のリフォーム・原状回復</p>
